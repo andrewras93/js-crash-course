@@ -54,3 +54,53 @@ console.log(Array.isArray(fruits));
 console.log(fruits);
 
 console.log(fruits.indexOf('oranges'));
+
+// Object literals
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+    hobbies: ['music', 'movies', 'sports'],
+    address: {
+        street: '50 main st',
+        city: 'Boston',
+        state: 'MA'
+    }
+}
+
+person.email = 'john@gmail.com';
+
+console.log(person);
+console.log(person.firstName, person.lastName);
+console.log(person.hobbies.indexOf('movies'));
+console.log(person.hobbies[1]);
+console.log(person.address.city);
+
+// Destructuring
+const {firstName, lastName, address: {city}} = person; // Trækker firstName, lastName og city værdierne ud af person, så vi kan tilgå dem direkte.
+
+console.log(firstName);
+console.log(city);
+
+// Array of objects
+const todos = [
+    {
+        id: 1,
+        text: 'Take out trash',
+        isCompleted: true
+    },
+    {
+        id: 2,
+        text: 'Meeting with boss',
+        isCompleted: true
+    },
+    {
+        id: 3,
+        text: 'Dentist appt',
+        isCompleted: false
+    },
+];
+
+console.log(todos);
+console.log(todos[1].text);
