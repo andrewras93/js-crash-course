@@ -111,3 +111,52 @@ console.log(todos[1].text);
 const todoJSON = JSON.stringify(todos); // Måde man kan sende data til en server på.
 
 console.log(todoJSON);
+
+// Loops
+for(let i=0; i<=10; i++){
+    console.log(`For Loop Number ${i}`);
+}
+
+let i = 0;
+
+while (i < 10){
+    console.log(`While Loop Number ${i}`);
+    i++;
+}
+
+for(let i = 0; i < todos.length; i++){
+    console.log(todos[i].text);
+}
+
+for(let todo of todos){
+    console.log(todo.id);
+}
+
+// High order array methods - anbefales når der skal arbejdes med arrays.
+
+// forEach
+todos.forEach(function(todo){
+    console.log(todo.text);
+});
+
+// map
+const todoText = todos.map(function(todo){
+    return todo.text;
+});
+
+console.log(todoText);
+
+// filter
+/*const todoCompleted = todos.filter(function(todo){
+    return todo.isCompleted === true;
+});
+
+console.log(todoCompleted);*/
+
+const todoCompleted = todos.filter(function(todo){
+    return todo.isCompleted === true;
+}).map(function(todo){
+    return todo.text;
+});
+
+console.log(todoCompleted);
