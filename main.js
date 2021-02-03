@@ -104,3 +104,10 @@ const todos = [
 
 console.log(todos);
 console.log(todos[1].text);
+
+// JSON - data format, bruges oftes til fullstack development i form af API'er. Når man sender og modtager data fra en server er det typisk i JSON format.
+// Skal have "" om variablerne og strings, i stedet for ''.
+
+const todoJSON = JSON.stringify(todos); // Måde man kan sende data til en server på.
+
+console.log(todoJSON);
