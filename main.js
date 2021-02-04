@@ -204,3 +204,14 @@ switch (color){
         console.log(`Color is NOT red or blue`);
         break;
 }
+
+// Functions
+function addNums(num1 = 1, num2 = 1){
+    return num1 + num2;
+}
+
+console.log(addNums(5,5));
+
+const subtNums = (num3 = 1, num4 = 1) => num3 - num4;
+
+console.log(subtNums(5, 5));
