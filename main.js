@@ -215,3 +215,45 @@ console.log(addNums(5,5));
 const subtNums = (num3 = 1, num4 = 1) => num3 - num4;
 
 console.log(subtNums(5, 5));
+
+// OOP
+// Constructor function
+/*function Person(fName, lName, dob){
+    this.fName = fName;
+    this.lName = lName;
+    this.dob = new Date(dob);
+    this.getBirthYear = () => this.dob.getFullYear();
+    this.getFullName = () => `${this.fName} ${this.lName}`;
+}
+
+Person.prototype.getBirthYear = function () {
+    return this.dob.getFullYear();
+}
+
+Person.prototype.getFullName = function () {
+    return `${this.fName} ${this.lName}`;
+}*/
+
+// Class = Pænere måde at skrive ovenstående kode på, men fungerer ens.
+// method is a function inside of a class.
+class Person{
+    constructor(fName, lName, dob) { // method.
+        this.fName = fName;
+        this.lName = lName;
+        this.dob = new Date(dob);
+    }
+    getBirthYear() {
+        return this.dob.getFullYear();
+    }
+    getFullName(){
+        return `${this.fName} ${this.lName}`;
+    }
+}
+
+// Instantiate object
+const person1 = new Person('John', 'Doe', '4-3-1980');
+const person2 = new Person('Mary', 'Smith', '3-6-1970');
+
+console.log(person1, person2.dob.getFullYear());
+console.log(person1.getBirthYear());
+console.log(person2.getFullName());
