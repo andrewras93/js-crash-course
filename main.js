@@ -160,3 +160,47 @@ const todoCompleted = todos.filter(function(todo){
 });
 
 console.log(todoCompleted);
+
+// Conditions
+const x2 = 20;
+const y2 = 11;
+
+if(x2 == 10){ // '==' kigger ikke på data typen, men kun værdien, så hvis x2 var en string ville den stadig gå igennem. Derfor vigtigt at bruge '==='.
+    console.log(`x2 is 10`);
+}
+
+if(x2 === 10){
+    console.log(`x2 is 10`);
+} else if(x2 > 10){
+    console.log(`x2 is greater than 10`)
+} else {
+    console.log(`x2 is less than 10`);
+}
+
+if(x2 > 5 || y2 > 10){
+    console.log(`x2 is more than 5 or y2 is more than 10`);
+}
+
+if(x2 > 5 && y2 > 10){
+    console.log(`x2 is more than 5 and y2 is more than 10`);
+}
+
+// Ternary operator
+const x3 = 10;
+
+const color = x3 > 10 ? 'red' : 'blue';
+
+console.log(color);
+
+// Switches
+switch (color){
+    case 'red':
+        console.log(`Color is red`);
+        break;
+    case 'blue':
+        console.log(`Color is blue`);
+        break;
+    default:
+        console.log(`Color is NOT red or blue`);
+        break;
+}
