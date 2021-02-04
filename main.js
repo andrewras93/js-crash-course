@@ -257,3 +257,68 @@ const person2 = new Person('Mary', 'Smith', '3-6-1970');
 console.log(person1, person2.dob.getFullYear());
 console.log(person1.getBirthYear());
 console.log(person2.getFullName());
+
+// DOM (User Interface)
+console.log(window);
+// Selectors
+// Single element
+console.log(document.getElementById('my-form'));
+console.log(document.querySelector('h1'));
+
+// Multiple element
+console.log(document.querySelectorAll('.item')); // Anbefalet at bruge, da det giver en NodeList som minder om et array. Man kan køre array methods på det.
+console.log(document.getElementsByClassName('item')); // Giver en HTMLCollection, men med HTMLCollection kan man ikke bruge array methods, man skal manuelt konvertere det til et array, hvis man vil kører array methods på det.
+console.log(document.getElementsByTagName('li'));
+
+const items = document.querySelectorAll('.item');
+
+items.forEach((item) => console.log(item));
+
+//const ul = document.querySelector('.items');
+
+//ul.remove();
+//ul.lastElementChild.remove();
+/*ul.firstElementChild.textContent = 'Hello';
+ul.children[1].innerText = 'Brad';
+ul.lastElementChild.innerHTML = '<h1>Hello</h1>';*/
+
+//const btn = document.querySelector('.btn');
+//btn.style.background = 'red';
+
+// Events
+
+//btn.addEventListener('click' /*'mouseover'*/ /*'mouseout'*/, (e) => {
+    //e.preventDefault();
+    //document.querySelector('#my-form').style.background = "#ccc";
+    //document.querySelector('body').classList.add('bg-dark');
+    //document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hello World</h1>'
+
+//});
+
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
+
+myForm.addEventListener('submit', onSubmit);
+
+function onSubmit(e){
+    e.preventDefault();
+
+    if(nameInput.value === '' || emailInput.value === ''){
+        msg.classList.add('error');
+        msg.innerHTML = 'Please enter all fields';
+
+        setTimeout(() => msg.remove(), 3000);
+    } else {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
+
+        userList.appendChild(li);
+
+        // Clear fields
+        nameInput.value = '';
+        emailInput.value = '';
+    }
+}
